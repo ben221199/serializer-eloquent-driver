@@ -1,5 +1,4 @@
 <?php
-
 namespace NilPortugues\Tests\Serializer\Drivers\Eloquent\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -7,23 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class User.
  */
-class Profile extends Model
-{
-    /**
-     * @var bool
-     */
-    public $timestamps = true;
+class Profile extends Model{
 
-    /**
-     * @var string
-     */
-    protected $table = 'profiles';
+	/**
+	 * @var bool
+	 */
+	public $timestamps = true;
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+	/**
+	 * @var string
+	 */
+	protected $table = 'profiles';
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function user(){
+		return $this->belongsTo(User::class);
+	}
+
 }

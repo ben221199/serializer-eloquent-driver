@@ -1,5 +1,4 @@
 <?php
-
 namespace NilPortugues\Serializer\Drivers\Eloquent;
 
 use Illuminate\Contracts\Pagination\Paginator;
@@ -9,8 +8,8 @@ use NilPortugues\Serializer\Drivers\Eloquent\Helper\RelationshipPropertyExtracto
 use NilPortugues\Serializer\Serializer;
 use ReflectionClass;
 
-class Driver extends Serializer
-{
+class Driver extends Serializer{
+
     /**
      *
      */

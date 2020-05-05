@@ -1,5 +1,4 @@
 <?php
-
 namespace NilPortugues\Tests\Serializer\Drivers\Eloquent\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -9,21 +8,20 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Like extends Model
 {
-    /**
-     * @var bool
-     */
-    public $timestamps = true;
+	/**
+	 * @var bool
+	 */
+	public $timestamps = true;
 
-    /**
-     * @var string
-     */
-    protected $table = 'likes';
+	/**
+	 * @var string
+	 */
+	protected $table = 'likes';
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function likeable()
-    {
-        return $this->morphTo();
-    }
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+	 */
+	public function likeable(){
+		return $this->morphTo();
+	}
 }

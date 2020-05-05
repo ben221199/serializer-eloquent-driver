@@ -13,8 +13,8 @@ namespace NilPortugues\Serializer\Drivers\Eloquent;
 /**
  * Class EloquentDriver.
  */
-class EloquentDriver
-{
+class EloquentDriver{
+
     /**
      * @var Driver
      */
@@ -25,12 +25,12 @@ class EloquentDriver
      *
      * @return mixed|string
      */
-    public static function serialize($value)
-    {
+    public static function serialize($value){
         if (empty(self::$driver)) {
             self::$driver = new Driver();
         }
 
         return self::$driver->serialize($value);
     }
+
 }

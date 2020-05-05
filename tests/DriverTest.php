@@ -1,5 +1,4 @@
 <?php
-
 namespace NilPortugues\Tests\Serializer\Drivers\Eloquent;
 
 use Illuminate\Database\Capsule\Manager as Capsule;

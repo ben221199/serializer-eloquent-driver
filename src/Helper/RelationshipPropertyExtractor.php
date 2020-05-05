@@ -66,7 +66,7 @@ class RelationshipPropertyExtractor
         $className,
         ReflectionClass $reflection,
         Driver $serializer
-    ) {
+    ){
         $methods = [];
         foreach ($reflection->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
             if (ltrim($method->class, '\\') !== ltrim($className, '\\')) {
@@ -124,8 +124,7 @@ class RelationshipPropertyExtractor
      *
      * @return bool
      */
-    protected static function isAllowedEloquentModelFunction($name)
-    {
+    protected static function isAllowedEloquentModelFunction($name){
         return false === in_array($name, self::$forbiddenFunction, true);
     }
 
@@ -134,8 +133,7 @@ class RelationshipPropertyExtractor
      *
      * @return bool
      */
-    protected static function isAnEloquentRelation($returned)
-    {
+    protected static function isAnEloquentRelation($returned){
         return false !== strpos(get_class($returned), 'Illuminate\Database\Eloquent\Relations');
     }
 
@@ -145,8 +143,7 @@ class RelationshipPropertyExtractor
      *
      * @return array
      */
-    protected static function getModelData(Driver $serializer, Model $model)
-    {
+    protected static function getModelData(Driver $serializer, Model $model){
         $stdClass = (object) $model->attributesToArray();
         $data = $serializer->serialize($stdClass);
         $data[Serializer::CLASS_IDENTIFIER_KEY] = get_class($model);

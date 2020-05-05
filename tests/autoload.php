@@ -19,7 +19,7 @@ $capsule->bootEloquent();
 $capsule->setAsGlobal();
 
 Capsule::schema('default')->dropIfExists('accountmanagers');
-Capsule::schema('default')->create('accountmanagers', function (Blueprint $table) {
+Capsule::schema('default')->create('accountmanagers', static function (Blueprint $table) {
     $table->primary('id');
     $table->integer('id');
     $table->string('username', 255);
@@ -30,7 +30,7 @@ Capsule::schema('default')->create('accountmanagers', function (Blueprint $table
 });
 
 Capsule::schema('default')->dropIfExists('users');
-Capsule::schema('default')->create('users', function (Blueprint $table) {
+Capsule::schema('default')->create('users', static function (Blueprint $table) {
     $table->primary('id');
     $table->integer('id');
     $table->integer('account_manager_id');
@@ -42,14 +42,14 @@ Capsule::schema('default')->create('users', function (Blueprint $table) {
 });
 
 Capsule::schema('default')->dropIfExists('user_user');
-Capsule::schema('default')->create('user_user', function (Blueprint $table) {
+Capsule::schema('default')->create('user_user', static function (Blueprint $table) {
     $table->integer('object_id');
     $table->integer('subject_id');
     $table->string('relationship', 255)->nullable();
 });
 
 Capsule::schema('default')->dropIfExists('profiles');
-Capsule::schema('default')->create('profiles', function (Blueprint $table) {
+Capsule::schema('default')->create('profiles', static function (Blueprint $table) {
     $table->primary('id');
     $table->integer('id');
     $table->integer('user_id');
@@ -58,7 +58,7 @@ Capsule::schema('default')->create('profiles', function (Blueprint $table) {
 });
 
 Capsule::schema('default')->dropIfExists('orders');
-Capsule::schema('default')->create('orders', function (Blueprint $table) {
+Capsule::schema('default')->create('orders', static function (Blueprint $table) {
     $table->primary('id');
     $table->integer('id');
     $table->integer('user_id');
@@ -67,20 +67,20 @@ Capsule::schema('default')->create('orders', function (Blueprint $table) {
 });
 
 Capsule::schema('default')->dropIfExists('groups');
-Capsule::schema('default')->create('groups', function (Blueprint $table) {
+Capsule::schema('default')->create('groups', static function (Blueprint $table) {
     $table->primary('id');
     $table->integer('id');
     $table->string('name', 255);
 });
 
 Capsule::schema('default')->dropIfExists('group_user');
-Capsule::schema('default')->create('group_user', function (Blueprint $table) {
+Capsule::schema('default')->create('group_user', static function (Blueprint $table) {
     $table->integer('user_id');
     $table->integer('group_id');
 });
 
 Capsule::schema('default')->dropIfExists('likes');
-Capsule::schema('default')->create('likes', function (Blueprint $table) {
+Capsule::schema('default')->create('likes', static function (Blueprint $table) {
     $table->primary('id');
     $table->integer('id');
     $table->integer('user_id');
